@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta
-from csv_ical import Convert
+#from csv_ical import Convert
 import pandas as pd
 from icalendar import Calendar
 import re
 
 
-#Define a function to parse the ICS file
+# Define a function to parse the ICS file
 def parse_ics(file_path):
     with open(file_path, 'r') as file:
         calendar = Calendar.from_ical(file.read())
@@ -61,7 +61,7 @@ def parse_ics(file_path):
     return events
 
 #Function to parse the CSV File
-def make_csv(SAVE_LOCATION, CSV_FILE_LOCATION):
+def make_csv(SAVE_LOCATION, output_csv_path='schedule.csv'):
     events = parse_ics(SAVE_LOCATION)
     # Create DataFrame from events
     data = {
@@ -77,9 +77,6 @@ def make_csv(SAVE_LOCATION, CSV_FILE_LOCATION):
 
     df['credits'] = None  # First empty column
     df['professor'] = None  # Second empty column
-
-    # Save DataFrame to CSV
-    #df.to_csv(CSV_FILE_LOCATION, index=False)
 
     #Converting dstart & dend column to datetime in order to split the date and time
     df['dstart'] = pd.to_datetime(df['dstart']) 
@@ -138,12 +135,7 @@ def make_csv(SAVE_LOCATION, CSV_FILE_LOCATION):
     # Format the time for time_between classes
     df['time_between'] = df['time_between'].apply(lambda x: f"{int(x.total_seconds() // 3600):02}:{int((x.total_seconds() % 3600) // 60):02}:{int(x.total_seconds() % 60):02}")
 
-    new_csv_file_location = r'C:\Users\James Toscano\Desktop\School\final_schedule.csv'
-
     # Save the DataFrame to a new CSV file
-    df.drop(columns=['dstart','dend','timeStart','timeEnd']).to_csv(new_csv_file_location, index=False)
-
-    print(df.drop(columns=['dstart', 'dend', 'timeStart', 'timeEnd',]).to_string(index=False)) #Print the dataframe without dstart and dend
-
+    df.drop(columns=['dstart','dend','timeStart','timeEnd']).to_csv(output_csv_path, index=False)
 
 

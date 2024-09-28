@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
 
+from csv_parse import make_csv
+
 app = Flask(__name__)
 CORS(app)
 
@@ -23,6 +25,9 @@ def upload_file():
     # Save the file to the upload folder
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
+
+    # Use csv_parse to convert to csv 
+    make_csv(file_path)
 
     return jsonify({'message': 'File uploaded successfully!', 'file_path': file_path}), 200
 
