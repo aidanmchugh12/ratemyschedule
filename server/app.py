@@ -31,5 +31,10 @@ def upload_file():
 
     return jsonify({'message': 'File uploaded successfully!', 'file_path': file_path}), 200
 
+@app.route('/api/test', methods=['GET'])
+def csv_to_array():
+    # implement code here
+    return #2d array
+
 if __name__ == '__main__':
     app.run(debug=True)
