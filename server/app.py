@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
+import pandas as pd
 
 from csv_parse import make_csv
 
@@ -33,8 +34,13 @@ def upload_file():
 
 @app.route('/api/test', methods=['GET'])
 def csv_to_array():
-    # implement code here
-    return #2d array
+    # put csv file values in 2d array
+    df = pd.read_csv('schedule.csv')
+    array = df.values
+
+    # return 2d array
+    return array
+
 
 if __name__ == '__main__':
     app.run(debug=True)
