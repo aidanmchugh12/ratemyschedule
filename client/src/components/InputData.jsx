@@ -18,8 +18,29 @@ class InputData extends React.Component {
   }
 
   postDataToBackend = async () => {
-    const data = [this.classNames, this.classProfs, this.classCredits]
-  }
+    const data = {
+      classes: [this.state.classNames, this.state.classProfs, this.state.classCredits]  // 2D array
+    };
+  
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/test', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',  // Set the Content-Type header
+        },
+        body: JSON.stringify(data),  // Convert the data to a JSON string
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const result = await response.json();  // Parse the response as JSON
+      console.log(result);  // Do something with the response
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   handleProfessorChange = (index, event) => {
     const newProfs = [...this.state.classProfs];
@@ -36,6 +57,7 @@ class InputData extends React.Component {
   handleSubmit = () => {
     console.log('Professors:', this.state.classProfs);
     console.log('Credits:', this.state.classCredits);
+    this.postDataToBackend();
   }
 
   setClassNames = (array2D) => {

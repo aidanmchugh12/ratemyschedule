@@ -8,7 +8,7 @@ class InputData extends React.Component {
       overallGrade: 'A',
       overallGradeBlurb: "You did great!",
       classBreaks: 0,
-      classBreaksBlurb: "",
+      classBreaksBlurb: "this is testing",
       profRating: 0,
       profRatingBlurb: "",
       creditsTaken: 0,

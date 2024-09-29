@@ -51,13 +51,20 @@ def csv_to_array():
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
 
-def data_into_csv(data_input):
+@app.route('/api/test', methods=['POST'])
+def data_into_csv():
+    print("TEST!")
+    data_input = request.get_json()
+    
+    if not data_input:
+        return jsonify({'error': 'No data provided'}), 400
+    
     df = pd.read_csv('schedule.csv')
     #classNames, classProfs, classCredits
     # split data_input into class names, professors, and credits
-    class_names = data_input[0]  # list of unique class names
-    class_profs = data_input[1]  # list of corresponding professors
-    class_credits = data_input[2]  # list of corresponding credits
+    class_names = data_input['classes'][0]
+    class_profs = data_input['classes'][1]
+    class_credits = data_input['classes'][2]
     
     # generate a set to keep track of updated classes in csv
     updated_classes = set()
@@ -87,11 +94,7 @@ def data_into_csv(data_input):
 
     # save the df back to the csv file
     df.to_csv('schedule.csv', index=False)
-    
-@app.route('/api/test', methods=['POST'])
-def array_to_csv():
-    # add 
-    return
+    return jsonify({'message': 'CSV updated successfully!'}), 200
 
 
 if __name__ == '__main__':
