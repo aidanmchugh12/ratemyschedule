@@ -1,5 +1,7 @@
 import ratemyprofessor
 
+import pandas as pd
+
 # professor = ratemyprofessor.get_professor_by_school_and_name(
 #     ratemyprofessor.get_school_by_name("University of Pittsburgh"), "Jarret Billingsley")
 # if professor is not None:
@@ -12,7 +14,7 @@ import ratemyprofessor
 #     else:
 #         print("Would Take Again: N/A")
 
-def getProfGrades(profs):
+def get_prof_grades(profs):
     profGradeSum = 0
     
     for p in profs:
@@ -25,23 +27,23 @@ def getProfGrades(profs):
     return round(profGradeSum / len(profs), 1)
 
 
-# def prof_rating():
-#     # read the dataframe but only get the professors column
-#     df = pd.read_csv('schedule.csv', usecols=['professor'])
+def get_final_grade():
+    # read the dataframe but only get the professors column
+    df = pd.read_csv('schedule.csv', usecols=['professor'])
     
-#     # make a new column for averaged professor rating
-#     df['average_rating'] = None
+    # make a new column for averaged professor rating
+    df['average_rating'] = None
     
-#     # loop through the professors and assign their average rating in the column
-#     for index, professor in enumerate(df['professor']):
-#         # check if professor has a value and is not nan
-#         if pd.notna(professor):
-#             df.at[index, 'average_rating'] = getProfGrade(professor)
-#         else:
-#             # if professor is NaN, assign None
-#             df.at[index, 'average_rating'] = None 
+    # loop through the professors and assign their average rating in the column
+    for index, professor in enumerate(df['professor']):
+        # check if professor has a value and is not nan
+        if pd.notna(professor):
+            df.at[index, 'average_rating'] = getProfGrade(professor)
+        else:
+            # if professor is NaN, assign None
+            df.at[index, 'average_rating'] = None
         
-#     return df
+    return df
 
     
 #print(getProfGrades(["jarret", "ramirez", "bonidie"]))
