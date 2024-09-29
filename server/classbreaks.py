@@ -14,6 +14,10 @@ def class_breaks(schedule): #arg: schedule.csv file
     breaksDf['location2']=breaksDf['location'][1:].tolist()+[np.nan]
     breaksDf['class_name2']=breaksDf['class_name'][1:].tolist()+[np.nan]
 
+    #create new columns cutting off classroom number
+    breaksDf['location_clean'] = breaksDf['location'].apply(lambda x: ' '.join(x.split(' ')[1:]))[1:].tolist() + [np.nan]
+    breaksDf['location2_clean'] = breaksDf['location'].apply(lambda x: ' '.join(x.split(' ')[1:]))[1:].tolist() + [np.nan]
+
     #drop unnecessary columns/values
     breaksDf.drop(columns=['duration','credits','professor'], inplace=True)
     breaksDf = breaksDf.loc[breaksDf.index != '00:00:00']
