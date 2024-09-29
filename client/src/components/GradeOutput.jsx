@@ -1,12 +1,13 @@
 import React from 'react'
+import './gradeoutput.css'
 
 class InputData extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      overallGrade: 'A',
-      overallGradeBlurb: "efiugsadhkfjahk",
+      overallGrade: '',
+      overallGradeBlurb: "",
       classBreaks: 0,
       classBreaksBlurb: "",
       profRating: 0,

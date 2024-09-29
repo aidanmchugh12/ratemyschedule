@@ -1,0 +1,83 @@
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .overall-grade-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap if needed */
+    margin-bottom: 20px;
+  }
+  
+  .overall-grade-container h1 {
+    font-size: 8rem;
+    color: #ff9800; /* Highlighted grade color */
+    margin-right: 20px; /* Adds space between the grade and the blurb */
+    flex-shrink: 0; /* Prevents the grade from shrinking */
+  }
+  
+  .overall-grade-container p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 60%; /* Limits the width of the blurb */
+    word-wrap: break-word; /* Ensures long words or text will wrap */
+  }
+  
+  
+  
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 80vw;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .card-header {
+    background-color: #1976d2;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .card-body {
+    background-color: #fff;
+    padding: 10px;
+    color: #333;
+  }
+  
+  .card-body .card-text {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  h5 {
+    margin: 0;
+  }
+  
+  .loading-screen {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .loading-screen h2 {
+    font-size: 2rem;
+    color: #1976d2;
+  }
+  
+  .loading-screen p {
+    font-size: 1rem;
+    color: #777;
+  }
+  

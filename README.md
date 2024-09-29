@@ -15,7 +15,7 @@ The idea and the project was developed by Aidan McHugh, Vaishu Kusumba, Lena Car
 
 1. be a Pitt student! 
 
-Rate My Schedule is designed specifically for Pitt Students--to get started, all you have to do is download your schedule from Peoplesoft. Just navigate to your schedule and use the Download button in the top right. The file type should be .ics.
+Rate My Schedule is designed specifically for Pitt students--to get started, all you have to do is download your schedule from Peoplesoft. Just navigate to your schedule and use the Download button in the top right. The file type should be .ics.
 
 ![](images/example.png)
 
