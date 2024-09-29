@@ -1,9 +1,10 @@
 import React from "react";
 
+
 class InputData extends React.Component {
   constructor() {
     super();
-
+    
     this.state = {
       classNames: [],
       classProfs: Array(5).fill(''),

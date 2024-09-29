@@ -17,10 +17,11 @@ class InputData extends React.Component {
   }
 
   getDataFromBackend = async () => {
-    
+
   }
 
   componentDidMount() {
+    this.getDataFromBackend();
   }
 
   render() {

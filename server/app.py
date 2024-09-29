@@ -6,7 +6,7 @@ import numpy as np
 
 # Other python functions
 from csv_parse import make_csv
-from rmp_grading import getProfGrades
+from rmp_grading import get_final_grade
 
 app = Flask(__name__)
 CORS(app)
@@ -115,6 +115,8 @@ def get_grading_results():
     }
     
     # data['classBreaks'] = breakFunction
+    
+    print(get_final_grade(csv_file))
     
     
     
