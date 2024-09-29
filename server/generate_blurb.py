@@ -49,11 +49,11 @@ def createBlurb(finalGrade):
     
     # write the final grade to the message
     final_grade_message = f"The student's final grade was: {finalGrade}. Use the data below to explain this grade.\n"
-    full_message += final_grade_message
+    final_grade_message += full_message
 
     # append all the content to the .txt file
     with open(txt_file_path, 'a') as txt_file:  # open in append mode
-        txt_file.write(full_message)
+        txt_file.write(final_grade_message)
 
     #print(full_message)
     # configure the api
@@ -61,7 +61,7 @@ def createBlurb(finalGrade):
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
-    response = model.generate_content(full_message)
+    response = model.generate_content(final_grade_message)
     
     return response.text
 
@@ -102,11 +102,11 @@ def creditRating(creditScore):
     
     # write the final grade to the message
     final_grade_message = f"The student's rating for credits taken is: {creditScore}. Use the credit data below to explain this ranking.\n"
-    full_message += final_grade_message
+    final_grade_message += full_message
 
     # append all the content to the .txt file
     with open(txt_file_path, 'a') as txt_file:  # open in append mode
-        txt_file.write(full_message)
+        txt_file.write(final_grade_message)
 
     #print(full_message)
     # configure the api
@@ -114,7 +114,7 @@ def creditRating(creditScore):
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
-    response = model.generate_content(full_message)
+    response = model.generate_content(final_grade_message)
     
     return response.text
 
@@ -150,11 +150,11 @@ def profRating(profScore):
     
     # write the final grade to the message
     final_grade_message = f"The student's ranking for credits taken is: {profScore}. Use the credit data below to explain this ranking in simple terms.\n"
-    full_message += final_grade_message
-
+    final_grade_message += full_message
+    
     # append all the content to the .txt file
     with open(txt_file_path, 'a') as txt_file:  # open in append mode
-        txt_file.write(full_message)
+        txt_file.write(final_grade_message)
 
     #print(full_message)
     # configure the api
@@ -162,7 +162,7 @@ def profRating(profScore):
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
-    response = model.generate_content(full_message)
+    response = model.generate_content(final_grade_message)
     
     return response.text
 
@@ -206,11 +206,11 @@ def breaksRating(breakScore):
     
     # write the final grade to the message
     final_grade_message = f"The student's ranking for breaks is: {breakScore}. Use the break data below to explain this ranking using at least one example from the data.\n"
-    full_message += final_grade_message
+    final_grade_message += full_message
 
     # append all the content to the .txt file
     with open(txt_file_path, 'a') as txt_file:  # open in append mode
-        txt_file.write(full_message)
+        txt_file.write(final_grade_message)
 
     #print(full_message)
     # configure the api
@@ -218,6 +218,6 @@ def breaksRating(breakScore):
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
-    response = model.generate_content(full_message)
+    response = model.generate_content(final_grade_message)
     
     return response.text
