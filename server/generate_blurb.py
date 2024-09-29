@@ -30,13 +30,15 @@ def createBlurb(finalGrade):
 
         example: Benedum Hall to Cathedral of Learning is a 9 minute walk and Lena has 10 minutes between the classes in those two buildings so it would rate it a 1
 
-    The credit_grading.py file give a rating based on the amount of credits you are taking from 12-18
+    The credit_grading.py file give a rating based on the amount of credits you are taking
         rating breakdown:
-         A 1 is the worst ranking, you have a lot of credits and have a packed schedule.
+       A 1 is the worst ranking, you have a lot of credits and have a packed schedule.
        A 2 is bad, but better than 1. You have a very tough schedule.
        A 3 is medium difficulty, it's manageable, but could be better.
        A 4 is a good schedule, it's slightly challenging but very possible and balanced.
        A 5 is a perfect schedule, you are taking a very manageable amount of credits.
+       
+       Make sure you justify your math equation of the total credits
         
     All three of these components are then combined in the function def get_overall_grade in the app.py file. The following code takes the grade from each of the above criteria and assigns a letter grade based on the value.
     The numbers that total_sum is currently compared to is arbitrary and is just shown to explain how the ratings return a grade of the person's schedule.
@@ -61,9 +63,6 @@ def createBlurb(finalGrade):
 
     It will output a grade (A,B,C,D,F) based on the grading (out of 5) of all the criteria above. Each of the criteria is given the same weightage so as to ensure there is no human bias towards which criteria "affects" a schedule the most.
 
-    example:
-    If a student is taking 18 credits and has a higher walking time than the amount of time their next class starts, they will have a lower schedule grade compared to someone who is taking 12 credits and has longer breaks between classes.
-    Also, if a student has a higher amount of credits, but very good professors and another student has a lower amount of credits, then the grade might even out similarly.
 
     I want you to write out a blurb (Between 100-150 characters) on why a student got a specific grade based on their criteria using data from the CSV to explain it to them.
 
@@ -114,6 +113,8 @@ def creditRating(creditScore):
        A 3 is medium difficulty, it's manageable, but could be better.
        A 4 is a good schedule, it's slightly challenging but very possible and balanced.
        A 5 is a perfect schedule, you are taking a very manageable amount of credits.
+       
+       Make sure you justify your math equation of the total credits
         
     I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on their credits taken.
     Their data is being written to this file, only concern yourself with the amount of credits taken.
