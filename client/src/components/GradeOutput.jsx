@@ -53,24 +53,21 @@ class InputData extends React.Component {
             <h5>Class Breaks: {classBreaks}/5</h5>
         </div>
         <div class="card-body">
-            {/* <h5 class="card-title">Class Breaks: 5/5</h5> */}
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">{classBreaksBlurb}</p>
         </div>
 
         <div class="card-header">
             <h5>Professor Rating: {profRating}/5</h5>
         </div>
         <div class="card-body">
-            {/* <h5 class="card-title">Class Breaks: 5/5</h5> */}
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">{profRatingBlurb}</p>
         </div>
 
         <div class="card-header">
             <h5>Credits: {creditsTaken}/5</h5>
         </div>
         <div class="card-body">
-            {/* <h5 class="card-title">Class Breaks: 5/5</h5> */}
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">{creditsTakenBlurb}</p>
         </div>
         </div>
       </div>
