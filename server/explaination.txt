@@ -1,0 +1,46 @@
+Overview:
+    The program is a schedule grader that evaluates a user's course schedule based on certain criteria:
+    All criteria is based on a scale of 1-5
+    1. The rmp_grading.py file averages three criteria
+        a. The professors current rating out of five (where decimals are allowed)
+        b. The difficulty of a certain class with said professor
+        c. The 'would take again' percentage in terms of the class with said professor
+        This average ends up a number out of 5 and the higher it is the better therefore making the overall letter grade better.
+
+    2. The breaks_grading.py file compares the length of the break between classes with the time it takes to walk from location 1 to location 2 
+        rating breakdown:
+    A 1 is the worst ranking (you have a tightly packed schedule and little time to walk between classes), and a 5 is the best, you have plenty of time to make it between classes
+
+    The credit_grading.py file give a rating based on the amount of credits you are taking and the difficulty.
+        rating breakdown:
+       A 1 is the worst ranking, you have a lot of credits and have a packed schedule and a 5 is the best rating.
+       
+        
+    All three of these components are then combined in the function def get_overall_grade in the app.py file. The following code takes the grade from each of the above criteria and assigns a letter grade based on the value.
+
+    It will output a grade (A,B,C,D,F) based on the grading (out of 5) of all the criteria above. Each of the criteria is given the same weightage so as to ensure there is no human bias towards which criteria "affects" a schedule the most.
+
+
+    I want you to write out a blurb (Second-Person Perspective)(Between 100-150 characters) on why a student got a specific grade based on their criteria using data from the CSV to explain it to them.
+    DO NOT MENTION THE TOTAL AMOUNT OF CREDITS TAKEN
+    
+
+CSV Data:
+   class_id                       location                     class_name  credits    professor       day duration time_between
+  MATH 0280               G29 Benedum Hall INTRO TO MATRICES & LINEAR ALG      3.0       JARRET    Monday 00:50:00     00:10:00
+COMMRC 0520     1414 Cathedral of Learning                PUBLIC SPEAKING      2.0       JARRET    Monday 00:50:00     00:10:00
+  SPAN 0125            3121C Public Health        GRAMMAR AND COMPOSITION      4.0      ramirez    Monday 00:50:00     00:10:00
+    CS 0441            5502 Sennott Square     DISCRETE STRUCTURES FOR CS      3.0      bonidie    Monday 01:15:00     00:00:00
+  SPAN 0082      230 Cathedral of Learning            LATIN AMERICA TODAY      4.0       nadine   Tuesday 01:15:00     00:45:00
+    CS 0447            5502 Sennott Square  COMPUTR ORGZTN & ASSMBLY LANG      3.0 david fraser   Tuesday 01:15:00     00:00:00
+  MATH 0280               G29 Benedum Hall INTRO TO MATRICES & LINEAR ALG      NaN          NaN Wednesday 00:50:00     00:10:00
+COMMRC 0520     1414 Cathedral of Learning                PUBLIC SPEAKING      NaN          NaN Wednesday 00:50:00     00:10:00
+  SPAN 0125            3121C Public Health        GRAMMAR AND COMPOSITION      NaN          NaN Wednesday 00:50:00     00:10:00
+    CS 0441            5502 Sennott Square     DISCRETE STRUCTURES FOR CS      NaN          NaN Wednesday 01:15:00     00:00:00
+  SPAN 0082      230 Cathedral of Learning            LATIN AMERICA TODAY      NaN          NaN  Thursday 01:15:00     00:45:00
+    CS 0447            5502 Sennott Square  COMPUTR ORGZTN & ASSMBLY LANG      NaN          NaN  Thursday 01:15:00     00:45:00
+    CS 0441            6110 Sennott Square     DISCRETE STRUCTURES FOR CS      NaN          NaN  Thursday 00:50:00     00:00:00
+  MATH 0280               G29 Benedum Hall INTRO TO MATRICES & LINEAR ALG      NaN          NaN    Friday 00:50:00     00:10:00
+COMMRC 0520     1414 Cathedral of Learning                PUBLIC SPEAKING      NaN          NaN    Friday 00:50:00     00:10:00
+  SPAN 0125            3121C Public Health        GRAMMAR AND COMPOSITION      NaN          NaN    Friday 00:50:00     02:10:00
+    CS 0447 305 Information Sciences Build  COMPUTR ORGZTN & ASSMBLY LANG      NaN          NaN    Friday 00:50:00     00:00:00The student's final grade was: F. Use the data below to explain this grade.

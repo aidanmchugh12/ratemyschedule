@@ -158,7 +158,7 @@ def profRating(profScore):
 
     #print(full_message)
     # configure the api
-    genai.configure(api_key='AIzaSyA7zDuJi_5LlvqSsTCzqv-Sj3-Jl1gyixM')
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
