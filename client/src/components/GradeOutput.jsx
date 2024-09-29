@@ -28,7 +28,7 @@ class InputData extends React.Component {
         <p>{overallGradeBlurb}</p>
       </div>
       <div class="cards-container">
-        <div class="breaks-grade">
+        <div class="breaks-card">
             <h1>{classBreaks}</h1>
             <p>{classBreaksBlurb}</p>
         </div>
