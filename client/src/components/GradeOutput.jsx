@@ -25,7 +25,16 @@ class InputData extends React.Component {
         }
   
         const data = await response.json();
-        console.log(data)
+        this.setState({
+            overallGrade: data['overallGrade'],
+            overallGradeBlurb: data['overallGradeBlurb'],
+            classBreaks: data['classBreaks'],
+            classBreaksBlurb: data['classBreaksBlurb'],
+            profRating: data['profRating'],
+            profRatingBlurb: data['profRatingBlurb'],
+            creditsTaken: data['creditsTaken'],
+            creditsTakenBlurb: data['creditsTakenBlurb']
+        })
 
       } catch (err) {
         console.error('Error fetching grading results:', err);

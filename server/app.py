@@ -105,7 +105,7 @@ def get_grading_results():
     csv_file = 'schedule.csv'
     
     data = {
-        "overallGrade": "",
+        "overallGrade": "B",
         "overallGradeBlurb": "",
         "classBreaks": 0,
         "classBreaksBlurb": "",
@@ -126,7 +126,7 @@ def get_grading_results():
     
     #data['overallGrade'] = get_overall_grade(classBreaks, profRating, creditsTaken)
     
-    return
+    return jsonify(data)
 
 def get_overall_grade(grade1, grade2, grade3):
     total_sum = grade1 + grade2 + grade3
