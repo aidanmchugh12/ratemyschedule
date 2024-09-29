@@ -4,8 +4,8 @@ def sum_credits(csvFile):
     # read the csv file 
     df = pd.read_csv(csvFile)
     
-    # get the sum and skip the Nan values
-    total_credits = df['credits'].sum(skipna = True)
+    # get the sum and fill the nan numbers with 0
+    total_credits = df['credits'].fillna(0).sum()
     
     # match case to determine credit rating
     match total_credits:

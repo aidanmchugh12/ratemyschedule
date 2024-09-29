@@ -28,19 +28,23 @@ def createBlurb(finalGrade):
 
         example: Benedum Hall to Cathedral of Learning is a 9 minute walk and Lena has 10 minutes between the classes in those two buildings so it would rate it a 1
 
-    3. The credit_grading.py file give a rating based on the amount of credits you are taking from 12-18
+    The credit_grading.py file give a rating based on the amount of credits you are taking from 12-18
         rating breakdown:
-        total_credits > 18 is given a 1
+        total_credits >= 18 is given a 1
+        18 is usually the maximum credits that people take in a semester, so it's guaranteed to be a harder and more packed schedule
+        - the reason it's a 1 is because you do not need to get any permissions to take this many credits
         - you have to get permission to take more than 18 credits and it is really difficult of a schedule due to the amount of classes and workload
-        total_credits = 18 is given a 2
-        - 18 is usually the maximum credits that people take in a semester, so it's guaranteed to be a harder and more packed schedule
-        - the reason it's a 2 is because you do not need to get any permissions to take this many credits
-        total_credits = 17 is given a 3
+        total_credits = 17 is given a 2
         - 17 is a higher amount of credits but does not hit the ceiling of credits like 18 does and therefore gets a higher rating towards the overall grade
-        total_credits = 16 is given a 4
+        total_credits = 16 is given a 3
         - 16 is a very doable amount of credits and gets the rating it does for that reason but it is not the least amount of credits you could take so it won't get a 5
-        total_credits <= 15 is given a 5
-        - 12 to 15 credits are the least amount of credits you can take and the less classes you have the less packed your schedule and workload will be making your schedule the nicest
+        total_credits = 15 is given a 4
+        - 15 is a normal workload and could be difficult, but is very manageable
+        total_credits <= 14 is given a 5
+        - 12 to 14 credits are the least amount of credits you can take and the less classes you have the less packed your schedule and workload will be making your schedule the nicest
+        
+    example:
+    If a student is taking 18 credits, they have a lot of work and is given a 1, because 18 is usually the max you can take before asking for permission
         
     All three of these components are then combined in the function def get_overall_grade in the app.py file. The following code takes the grade from each of the above criteria and assigns a letter grade based on the value.
     The numbers that total_sum is currently compared to is arbitrary and is just shown to explain how the ratings return a grade of the person's schedule.
@@ -69,7 +73,7 @@ def createBlurb(finalGrade):
     If a student is taking 18 credits and has a higher walking time than the amount of time their next class starts, they will have a lower schedule grade compared to someone who is taking 12 credits and has longer breaks between classes.
     Also, if a student has a higher amount of credits, but very good professors and another student has a lower amount of credits, then the grade might even out similarly.
 
-    I want you to write out a blurb (Between 150-300 characters) on why a student got a specific grade based on their criteria using data from the CSV to explain it to them.
+    I want you to write out a blurb (Between 100-150 characters) on why a student got a specific grade based on their criteria using data from the CSV to explain it to them.
 
     """
 
