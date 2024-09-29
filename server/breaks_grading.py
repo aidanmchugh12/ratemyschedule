@@ -43,4 +43,5 @@ def class_breaks(schedule): #arg: schedule.csv file
 
     breaksDf['break_diff_score'] = breaksDf['break_walk_diff'].apply(score)
 
+    breaksDf.to_csv('breaks.csv', index=False)
     return int(breaksDf['break_diff_score'].mean()) 
