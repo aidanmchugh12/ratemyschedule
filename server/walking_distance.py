@@ -45,13 +45,11 @@ def get_walking_distance(api_key, origin, destination):
             walking_distance = math.ceil((data['routes'][0]['sections'][0]['summary']['length'] / 1000)*12.6)  # Convert to kilometers
             return walking_distance
         except (IndexError, KeyError):
-            return None
+            return 0
     else:
-        return f"Error: {response.status_code}, {response.text}"
+        return 0
 
 #test  
 #loc1="Sennott Square"
 #loc2="Wesley W. Posvar Hall"
 #print(getWalkTime(loc1, loc2))
-    
-
