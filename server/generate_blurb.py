@@ -146,7 +146,7 @@ def profRating(profScore):
 
     # combine the explaination and csv data
     csv_data = df.to_string(index=False)  # convert the DataFrame to a string without index
-    full_message = f"{message}\n\nCSV Data:\n{csv_data}"
+    full_message = f"{message}\n\nCSV Data:\n{csv_data}\n"
     
     # write the final grade to the message
     final_grade_message = f"The student's ranking for credits taken is: {profScore}. Use the credit data below to explain this ranking in simple terms.\n"
