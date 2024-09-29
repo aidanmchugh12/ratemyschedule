@@ -101,7 +101,7 @@ def creditRating(creditScore):
     full_message = f"{message}\n\nCSV Data:\n{csv_data}"
     
     # write the final grade to the message
-    final_grade_message = f"The student's rating for credits taken is: {creditScore}. Use the professor data below to explain this ranking.\n"
+    final_grade_message = f"The student's rating for credits taken is: {creditScore}. Use the credit data below to explain this ranking.\n"
     full_message += final_grade_message
 
     # append all the content to the .txt file
@@ -149,7 +149,7 @@ def profRating(profScore):
     full_message = f"{message}\n\nCSV Data:\n{csv_data}"
     
     # write the final grade to the message
-    final_grade_message = f"The student's ranking for credits taken is: {profScore}. Use the credit data below to explain this ranking.\n"
+    final_grade_message = f"The student's ranking for credits taken is: {profScore}. Use the credit data below to explain this ranking in simple terms.\n"
     full_message += final_grade_message
 
     # append all the content to the .txt file
@@ -158,7 +158,7 @@ def profRating(profScore):
 
     #print(full_message)
     # configure the api
-    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    genai.configure(api_key='AIzaSyA7zDuJi_5LlvqSsTCzqv-Sj3-Jl1gyixM')
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
@@ -189,7 +189,7 @@ def breaksRating(breakScore):
     
     
     I want you to write out a blurb (Second-Person Perspective)(Between 150-300 characters) on why they got their specific score based on the length of their breaks and time it takes to walk between classes.
-    Their data is being written to this file, only concern yourself with the data concerning this metric (breaks).
+    Give at least one example of a break time compared to their walking time using the data,
 
     """
 
@@ -205,7 +205,7 @@ def breaksRating(breakScore):
     full_message = f"{message}\n\nCSV Data:\n{csv_data}"
     
     # write the final grade to the message
-    final_grade_message = f"The student's ranking for breaks is: {breakScore}. Use the break data below to explain this ranking.\n"
+    final_grade_message = f"The student's ranking for breaks is: {breakScore}. Use the break data below to explain this ranking using at least one example from the data.\n"
     full_message += final_grade_message
 
     # append all the content to the .txt file
