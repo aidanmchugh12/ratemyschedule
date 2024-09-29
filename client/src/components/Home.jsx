@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate  } from 'react-router-dom';
 
 export default function Home() {
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
 
   const submitData = async () => {
     if (!file) {
@@ -18,7 +20,7 @@ export default function Home() {
     });
 
     const result = await response.json();
-    console.log(result);
+    navigate('/input');
   };
 
   return (
