@@ -1,6 +1,9 @@
 import requests
 import math
 import pandas as pd
+from dotenv import load_dotenv
+import os
+
 
 #get the walk time between 2 buildings
 def getWalkTime(building1, building2):
@@ -8,7 +11,7 @@ def getWalkTime(building1, building2):
     building1coords = getBuildingCoords(building1)
     building2coords = getBuildingCoords(building2)
 
-    api_key = "KR_zu2-V5a95QdwF4WTRXpZingouudhSV1F92OzB64s"
+    api_key = os.getenv("ROUTER_API_KEY")
     walkTime = (get_walking_distance(api_key, building1coords, building2coords))
     return walkTime
 
