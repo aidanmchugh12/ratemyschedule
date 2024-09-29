@@ -9,7 +9,7 @@ from csv_parse import make_csv
 from rmp_grading import get_final_grade
 from credit_grading import sum_credits
 from breaks_grading import class_breaks
-from generate_blurb import createBlurb
+from generate_blurb import createBlurb, breaksRating, profRating, creditRating
 
 app = Flask(__name__)
 CORS(app)
@@ -118,15 +118,15 @@ def get_grading_results():
     }
     
     data['classBreaks'] = class_breaks(csv_file)
-    #data['classBreaksBlurb'] = something
+    data['classBreaksBlurb'] = breaksRating(data['classBreaks'])
     
     data['profRating'] = get_final_grade(csv_file) 
-    #data['profRatingBlurb'] = something
+    data['profRatingBlurb'] = profRating(data['profRating'])
     
     data['creditsTaken'] = sum_credits(csv_file)
-    #data['creditsTakenBlurb'] = something
+    data['creditsTakenBlurb'] = creditRating(data['creditsTaken'])
     
-    #data['overallGrade'] = get_overall_grade(classBreaks, profRating, creditsTaken)
+    data['overallGrade'] = get_overall_grade(data['classBreaks'], data['profRating'], data['creditsTaken'])
     data['overallGradeBlurb'] = createBlurb(get_overall_grade(data['classBreaks'], data['profRating'], data['creditsTaken']))
     
     return jsonify(data)
