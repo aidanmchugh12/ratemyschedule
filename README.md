@@ -32,10 +32,6 @@ Like magic, you’ll receive a report card breaking down 3 crucial aspects of yo
 
 ![](images/output.png)
 
-# **How to Install**
-
-Don't do it.
-
 # **Lanuages/Frameworks/Dev Tools**
 
 + Flask
