@@ -7,6 +7,7 @@ import numpy as np
 # Other python functions
 from csv_parse import make_csv
 from rmp_grading import get_final_grade
+from credit_grading import sum_credits
 
 app = Flask(__name__)
 CORS(app)
@@ -104,7 +105,7 @@ def get_grading_results():
     csv_file = 'schedule.csv'
     
     data = {
-        "overallGrade": "",
+        "overallGrade": "B",
         "overallGradeBlurb": "",
         "classBreaks": 0,
         "classBreaksBlurb": "",
@@ -114,13 +115,31 @@ def get_grading_results():
         "creditsTakenBlurb": "",
     }
     
-    # data['classBreaks'] = breakFunction
+    #data['classBreaks'] = FUNCTION
+    #data['classBreaksBlurb'] = something
     
-    print(get_final_grade(csv_file))
+    #data['profRating'] = get_final_grade(csv_file) 
+    #data['profRatingBlurb'] = something
     
+    #data['creditsTaken'] = sum_credits(csv_file)
+    #data['creditsTakenBlurb'] = something
     
+    #data['overallGrade'] = get_overall_grade(classBreaks, profRating, creditsTaken)
     
-    return 
+    return jsonify(data)
+
+def get_overall_grade(grade1, grade2, grade3):
+    total_sum = grade1 + grade2 + grade3
+    
+    if total_sum >= 13.5:
+        return 'A'
+    elif total_sum >= 11.5:
+        return 'B'
+    elif total_sum >= 10.5:
+        return 'C'
+    elif total_sum >= 8:
+        return 'D'
+    return 'F'
 
 
 if __name__ == '__main__':

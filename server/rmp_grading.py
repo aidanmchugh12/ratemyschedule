@@ -21,8 +21,6 @@ def get_prof_grades(profs):
         currentProf = ratemyprofessor.get_professor_by_school_and_name(ratemyprofessor.get_school_by_name("University of Pittsburgh"), p)
         if currentProf is not None:
             profGradeSum += (currentProf.rating + currentProf.difficulty + (currentProf.would_take_again/100 * 5)) / 3
-            print(currentProf.name)
-            print(profGradeSum)
 
     return round(profGradeSum / len(profs), 1)
 
