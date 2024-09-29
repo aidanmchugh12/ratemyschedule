@@ -13,7 +13,7 @@ The idea and the project was developed by Aidan McHugh, Vaishu Kusumba, Lena Car
 
 # **How to Use**
 
-1. be a Pitt student! 
+1. Be a Pitt student! 
 
 Rate My Schedule is designed specifically for Pitt students--to get started, all you have to do is download your schedule from Peoplesoft. Just navigate to your schedule and use the Download button in the top right. The file type should be .ics.
 
@@ -36,7 +36,7 @@ Like magic, you’ll receive a report card breaking down 3 crucial aspects of yo
 
 Don't do it.
 
-# **Tools/APIs**
+# **Lanuages/Frameworks/Dev Tools**
 
 + Flask
 + Python
@@ -45,6 +45,11 @@ Don't do it.
 + Github
 + HTML
 + CSS
+
+# **APIs**
++ Gemini
++ RateMyProfessor
++ HERE Routing
 
 
 
