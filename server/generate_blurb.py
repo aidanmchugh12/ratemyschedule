@@ -1,6 +1,8 @@
 import google.generativeai as genai
 import os
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+genai.configure(api_key='AIzaSyA7zDuJi_5LlvqSsTCzqv-Sj3-Jl1gyixM')
+model = genai.GenerativeModel("gemini-1.5-flash", system_instruction="You must answer politely")
 
-print(os.environ["GEMINI_API_KEY"])
+response = model.generate_content("question")
+print(response.text)
