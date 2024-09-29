@@ -4,7 +4,9 @@ import os
 import pandas as pd
 import numpy as np
 
+# Other python functions
 from csv_parse import make_csv
+from rmp_grading import getProfGrades
 
 app = Flask(__name__)
 CORS(app)
@@ -33,7 +35,7 @@ def upload_file():
 
     return jsonify({'message': 'File uploaded successfully!', 'file_path': file_path}), 200
 
-@app.route('/api/test', methods=['GET'])
+@app.route('/api/input', methods=['GET'])
 def csv_to_array():
     try:
         # Load the CSV file
@@ -51,7 +53,7 @@ def csv_to_array():
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
 
-@app.route('/api/test', methods=['POST'])
+@app.route('/api/input', methods=['POST'])
 def data_into_csv():
     print("TEST!")
     data_input = request.get_json()
@@ -60,7 +62,7 @@ def data_into_csv():
         return jsonify({'error': 'No data provided'}), 400
     
     df = pd.read_csv('schedule.csv')
-    #classNames, classProfs, classCredits
+
     # split data_input into class names, professors, and credits
     class_names = data_input['classes'][0]
     class_profs = data_input['classes'][1]
@@ -95,6 +97,23 @@ def data_into_csv():
     # save the df back to the csv file
     df.to_csv('schedule.csv', index=False)
     return jsonify({'message': 'CSV updated successfully!'}), 200
+
+@app.route('/api/output', methods=['GET'])
+def get_grading_results():
+    data = {
+        "overallGrade": "",
+        "overallGradeBlurb": "",
+        "classBreaks": 0,
+        "classBreaksBlurb": "",
+        "profRating": 0,
+        "profRatingBlurb": "",
+        "creditsTaken": 0,
+        "creditsTakenBlurb": "",
+    }
+    
+    
+    
+    return 
 
 
 if __name__ == '__main__':

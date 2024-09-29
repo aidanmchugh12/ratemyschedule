@@ -12,31 +12,31 @@ class InputData extends React.Component {
   }
 
   getDataFromBackend = async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/test');
+    const response = await fetch('http://127.0.0.1:5000/api/input');
     const data = await response.json();
     this.setClassNames(data);
   }
 
   postDataToBackend = async () => {
     const data = {
-      classes: [this.state.classNames, this.state.classProfs, this.state.classCredits]  // 2D array
-    };
+      classes: [this.state.classNames, this.state.classProfs, this.state.classCredits]
+    }
   
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/test', {
+      const response = await fetch('http://127.0.0.1:5000/api/input', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',  // Set the Content-Type header
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),  // Convert the data to a JSON string
+        body: JSON.stringify(data),
       });
   
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
   
-      const result = await response.json();  // Parse the response as JSON
-      console.log(result);  // Do something with the response
+      const result = await response.json();
+      console.log(result);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -55,8 +55,8 @@ class InputData extends React.Component {
   }
 
   handleSubmit = () => {
-    console.log('Professors:', this.state.classProfs);
-    console.log('Credits:', this.state.classCredits);
+    // console.log('Professors:', this.state.classProfs);
+    // console.log('Credits:', this.state.classCredits);
     this.postDataToBackend();
   }
 
@@ -98,7 +98,7 @@ class InputData extends React.Component {
                 value={this.state.classProfs[index]}
                 onChange={(event) => this.handleProfessorChange(index, event)}
               />
-              <select className="form-select" aria-label="Select credits">
+              <select className="form-select" aria-label="Select credits" onChange={(event) => this.handleCreditChange(index, event)}>
                 <option value="1">1 Credit</option>
                 <option value="2">2 Credits</option>
                 <option value="3">3 Credits</option>
