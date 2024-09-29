@@ -35,17 +35,21 @@ def upload_file():
 
 @app.route('/api/test', methods=['GET'])
 def csv_to_array():
-    # put csv file values in 2d array
-    df = pd.read_csv('schedule.csv')
+    try:
+        # Load the CSV file
+        df = pd.read_csv('schedule.csv')
 
-    # only need unique class values
-    df_unique = df.drop_duplicates(subset=['class_id'])
+        df_unique = df.drop_duplicates(subset=['class_id'])
 
-    # convert back to a numpy array if needed
-    unique_array = df_unique.to_numpy()
+        # Change null values to none to properly jsonify 2d array
+        df_unique = df_unique.applymap(lambda x: None if pd.isna(x) else x)
 
-    # return unique array
-    return unique_array
+        unique_array = df_unique.values.tolist()
+        return jsonify(unique_array)
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':
