@@ -29,6 +29,7 @@ class InputData extends React.Component {
         }
   
         const data = await response.json();
+        if (this.state.hasFetched) return;
         this.setState({
             overallGrade: data['overallGrade'],
             overallGradeBlurb: data['overallGradeBlurb'],
