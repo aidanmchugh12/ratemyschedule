@@ -50,7 +50,12 @@ def prof_rating():
     
     # loop through the professors and assign their average rating in the column
     for index, professor in enumerate(df['professor']):
-        df.at[index, 'average_rating'] = getProfGrade(professor)
+        # check if professor has a value and is not nan
+        if pd.notna(professor):
+            df.at[index, 'average_rating'] = getProfGrade(professor)
+        else:
+            # if professor is NaN, assign None
+            df.at[index, 'average_rating'] = None 
         
     return df
 

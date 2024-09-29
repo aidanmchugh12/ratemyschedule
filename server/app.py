@@ -50,6 +50,43 @@ def csv_to_array():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
+
+def data_into_csv(data_input):
+    df = pd.read_csv('schedule.csv')
+    #classNames, classProfs, classCredits
+    # split data_input into class names, professors, and credits
+    class_names = data_input[0]  # list of unique class names
+    class_profs = data_input[1]  # list of corresponding professors
+    class_credits = data_input[2]  # list of corresponding credits
+    
+    # generate a set to keep track of updated classes in csv
+    updated_classes = set()
+    
+    # loop through the dataframe to update professor and credits columns
+    for index, class_id in enumerate(df['class_id']):
+        # check if class_id matches any class from the array class names
+        if class_id in class_names:
+            # if  class hasn't been updated yet
+            if class_id not in updated_classes:
+                # get the index of the class in class_names
+                class_index = class_names.index(class_id)
+
+                # update the professor and credits columns
+                df.at[index, 'professor'] = class_profs[class_index]
+                df.at[index, 'credits'] = class_credits[class_index]
+
+                # mark the class as updated
+                updated_classes.add(class_id)
+            else:
+                # for duplicate classes, set professor and credits to nan
+                df.at[index, 'professor'] = np.nan
+                df.at[index, 'credits'] = np.nan
+        else:
+            # if the class_id is not found in class_names leave it
+            pass
+
+    # save the df back to the csv file
+    df.to_csv('schedule.csv', index=False)
     
 @app.route('/api/test', methods=['POST'])
 def array_to_csv():
