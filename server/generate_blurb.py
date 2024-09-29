@@ -11,32 +11,20 @@ def createBlurb(finalGrade):
     # store the program overview in a message variable
     message = """Overview:
     The program is a schedule grader that evaluates a user's course schedule based on certain criteria:
+    All criteria is based on a scale of 1-5
     1. The rmp_grading.py file averages three criteria
         a. The professors current rating out of five (where decimals are allowed)
         b. The difficulty of a certain class with said professor
         c. The 'would take again' percentage in terms of the class with said professor
         This average ends up a number out of 5 and the higher it is the better therefore making the overall letter grade better.
 
-    2. The breaks_grading.py file compares the length of the break between classes with the time it takes to walk to that class (also on a scale of five)
-        - The program then subtracts these two values to see the difference between how long you have and how long it'll take you to get to class
-        - The program uses the coordinates of the buildings to generate how long it will take to walk between them
-        
+    2. The breaks_grading.py file compares the length of the break between classes with the time it takes to walk from location 1 to location 2 
         rating breakdown:
-        difference < 2 is given a 1
-        difference < 4 is given a 2
-        difference < 6 is given a 3
-        difference < 10 is given a 4
-        difference >= 10 is given a 5
+    A 1 is the worst ranking (you have a tightly packed schedule and little time to walk between classes), and a 5 is the best, you have plenty of time to make it between classes
 
-        example: Benedum Hall to Cathedral of Learning is a 9 minute walk and Lena has 10 minutes between the classes in those two buildings so it would rate it a 1
-
-    The credit_grading.py file give a rating based on the amount of credits you are taking
+    The credit_grading.py file give a rating based on the amount of credits you are taking and the difficulty.
         rating breakdown:
-       A 1 is the worst ranking, you have a lot of credits and have a packed schedule.
-       A 2 is bad, but better than 1. You have a very tough schedule.
-       A 3 is medium difficulty, it's manageable, but could be better.
-       A 4 is a good schedule, it's slightly challenging but very possible and balanced.
-       A 5 is a perfect schedule, you are taking a very manageable amount of credits.
+       A 1 is the worst ranking, you have a lot of credits and have a packed schedule and a 5 is the best rating.
        
         
     All three of these components are then combined in the function def get_overall_grade in the app.py file. The following code takes the grade from each of the above criteria and assigns a letter grade based on the value.
