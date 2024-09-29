@@ -100,6 +100,9 @@ def data_into_csv():
 
 @app.route('/api/output', methods=['GET'])
 def get_grading_results():
+    
+    csv_file = 'schedule.csv'
+    
     data = {
         "overallGrade": "",
         "overallGradeBlurb": "",
@@ -110,6 +113,8 @@ def get_grading_results():
         "creditsTaken": 0,
         "creditsTakenBlurb": "",
     }
+    
+    # data['classBreaks'] = breakFunction
     
     
     
