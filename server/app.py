@@ -136,11 +136,11 @@ def get_overall_grade(grade1, grade2, grade3):
     
     if total_sum >= 13.5:
         return 'A'
-    elif total_sum >= 11.5:
-        return 'B'
     elif total_sum >= 10.5:
+        return 'B'
+    elif total_sum >= 9.5:
         return 'C'
-    elif total_sum >= 8:
+    elif total_sum >= 8.5:
         return 'D'
     return 'F'
 
