@@ -38,28 +38,8 @@ def createBlurb(finalGrade):
        A 4 is a good schedule, it's slightly challenging but very possible and balanced.
        A 5 is a perfect schedule, you are taking a very manageable amount of credits.
        
-       Make sure you justify your math equation of the total credits
         
     All three of these components are then combined in the function def get_overall_grade in the app.py file. The following code takes the grade from each of the above criteria and assigns a letter grade based on the value.
-    The numbers that total_sum is currently compared to is arbitrary and is just shown to explain how the ratings return a grade of the person's schedule.
-
-    def get_overall_grade(grade1, grade2, grade3):
-        total_sum = grade1 + grade2 + grade3
-        
-        if total_sum >= 13.5:
-            return 'A'
-        elif total_sum >= 11.5:
-            return 'B'
-        elif total_sum >= 10.5:
-            return 'C'
-        elif total_sum >= 8:
-            return 'D'
-        return 'F'
-
-    Input and Output Structure:
-
-    The user is able to input their schedule as a .ics (that can be downloaded straight from their peopleSoft application) amd the program will convert it to a .csv file to read all the data.
-    - this includes: class name, professor, credits, start time, end time, duration of class
 
     It will output a grade (A,B,C,D,F) based on the grading (out of 5) of all the criteria above. Each of the criteria is given the same weightage so as to ensure there is no human bias towards which criteria "affects" a schedule the most.
 
@@ -114,7 +94,7 @@ def creditRating(creditScore):
        A 4 is a good schedule, it's slightly challenging but very possible and balanced.
        A 5 is a perfect schedule, you are taking a very manageable amount of credits.
        
-       Make sure you justify your math equation of the total credits
+
         
     I want you to write out a blurb (Second-Person Perspective)(Between 150-300 characters) on why they got their specific score based on their credits taken.
     Their data is being written to this file, only concern yourself with the amount of credits taken.
@@ -164,9 +144,6 @@ def profRating(profScore):
         c. The 'would take again' percentage in terms of the class with said professor
         This average ends up a number out of 5 and the higher it is the better therefore making the overall letter grade better.
         
-    example:
-    If a student is taking a professor with a high difficulty ranking, they will have a lower score.
-    
     I want you to write out a blurb (Second-Person Perspective) (Between 150-300 characters) on why they got their specific score based on their professor taken.
     Their data is being written to this file, only concern yourself with the professor data taken.
 
