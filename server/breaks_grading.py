@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from walktime import getWalkTime
+from walking_distance import getWalkTime
 
 def class_breaks(schedule): #arg: schedule.csv file
     
@@ -24,7 +24,7 @@ def class_breaks(schedule): #arg: schedule.csv file
     #drop unnecessary columns/values
     breaksDf.drop(columns=['duration','credits','professor'], inplace=True)
     breaksDf.drop(index=0, inplace=True)
-
+    
     breaksDf['walk_time'] = breaksDf.apply(lambda row: getWalkTime(row['location_clean'], row['location2_clean']), axis=1).astype(int)
     breaksDf['break_walk_diff'] = breaksDf.index - breaksDf['walk_time']
 
@@ -43,10 +43,5 @@ def class_breaks(schedule): #arg: schedule.csv file
 
     breaksDf['break_diff_score'] = breaksDf['break_walk_diff'].apply(score)
 
-    #print(breaksDf)
-
     breaksDf.to_csv('breaks.csv', index=False)
-    return breaksDf['break_diff_score'].mean().astype(int)
-
-#test
-#class_breaks('schedule.csv')
+    return int(breaksDf['break_diff_score'].mean()) 

@@ -13,10 +13,13 @@ class InputData extends React.Component {
       profRatingBlurb: "",
       creditsTaken: 0,
       creditsTakenBlurb: "",
+      loading: true,
+      hasFetched: false,
     };
   }
 
   getDataFromBackend = async () => {
+    if (this.state.hasFetched) return;
     try {
         const response = await fetch('http://127.0.0.1:5000/api/output');
   
@@ -33,7 +36,9 @@ class InputData extends React.Component {
             profRating: data['profRating'],
             profRatingBlurb: data['profRatingBlurb'],
             creditsTaken: data['creditsTaken'],
-            creditsTakenBlurb: data['creditsTakenBlurb']
+            creditsTakenBlurb: data['creditsTakenBlurb'],
+            loading: false,
+            hasFetched: true,
         })
 
       } catch (err) {
@@ -45,8 +50,18 @@ class InputData extends React.Component {
     this.getDataFromBackend();
   }
 
+
   render() {
-    const { overallGrade, overallGradeBlurb, classBreaks, classBreaksBlurb, profRating, profRatingBlurb, creditsTaken, creditsTakenBlurb} = this.state;
+    const { overallGrade, overallGradeBlurb, classBreaks, classBreaksBlurb, profRating, profRatingBlurb, creditsTaken, creditsTakenBlurb, loading} = this.state;
+    if (loading) {
+        return (
+          <div className="loading-screen">
+            <h2>Loading...</h2>
+            <p>Please wait while we gather your information.</p>
+          </div>
+        );
+      }
+
     return (
       <>
       <head>

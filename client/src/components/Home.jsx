@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
+import './home.css'
 
 export default function Home() {
   const [file, setFile] = useState(null);
@@ -25,9 +26,10 @@ export default function Home() {
 
   return (
     <>
-      <h1>RateMySchedule!</h1>
+      <h1 class="title">RateMySchedule</h1>
       <p>Attatch .ics file below to analyze your schedule!</p>
-      <img src="ICS_TO_CSV.png"></img>
+      <img class="photo" src="ICS_TO_CSV.png"></img>
+      <div>
       <input
         type="file"
         onChange={(event) => setFile(event.target.files[0])}
@@ -38,6 +40,7 @@ export default function Home() {
         onClick={submitData}
         value="Upload File"
       />
+      </div>
     </>
   );
 }

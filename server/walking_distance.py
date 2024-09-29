@@ -48,8 +48,3 @@ def get_walking_distance(api_key, origin, destination):
             return 0
     else:
         return 0
-
-#test  
-#loc1="Sennott Square"
-#loc2="Wesley W. Posvar Hall"
-#print(getWalkTime(loc1, loc2))
