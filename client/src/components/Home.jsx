@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 class="title">RateMySchedule!</h1>
+      <h1 class="title">RateMySchedule</h1>
       <p>Attatch .ics file below to analyze your schedule!</p>
       <img class="photo" src="ICS_TO_CSV.png"></img>
       <div>
