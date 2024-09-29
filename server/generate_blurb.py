@@ -112,20 +112,21 @@ def creditRating(creditScore):
     The program is a schedule grader that evaluates a user's course schedule based on certain criteria:
      The credit_grading.py file give a rating based on the amount of credits you are taking from 12-18
         rating breakdown:
-        total_credits > 18 is given a 1
+        total_credits >= 18 is given a 1
+        18 is usually the maximum credits that people take in a semester, so it's guaranteed to be a harder and more packed schedule
+        - the reason it's a 1 is because you do not need to get any permissions to take this many credits
         - you have to get permission to take more than 18 credits and it is really difficult of a schedule due to the amount of classes and workload
-        total_credits = 18 is given a 2
-        - 18 is usually the maximum credits that people take in a semester, so it's guaranteed to be a harder and more packed schedule
-        - the reason it's a 2 is because you do not need to get any permissions to take this many credits
-        total_credits = 17 is given a 3
+        total_credits = 17 is given a 2
         - 17 is a higher amount of credits but does not hit the ceiling of credits like 18 does and therefore gets a higher rating towards the overall grade
-        total_credits = 16 is given a 4
+        total_credits = 16 is given a 3
         - 16 is a very doable amount of credits and gets the rating it does for that reason but it is not the least amount of credits you could take so it won't get a 5
-        total_credits <= 15 is given a 5
-        - 12 to 15 credits are the least amount of credits you can take and the less classes you have the less packed your schedule and workload will be making your schedule the nicest
+        total_credits = 15 is given a 4
+        - 15 is a normal workload and could be difficult, but is very manageable
+        total_credits <= 14 is given a 5
+        - 12 to 14 credits are the least amount of credits you can take and the less classes you have the less packed your schedule and workload will be making your schedule the nicest
         
     example:
-    If a student is taking 18 credits, they have a lot of work and is given a 2, because they could have more than 18
+    If a student is taking 18 credits, they have a lot of work and is given a 1, because 18 is usually the max you can take before asking for permission
     
     I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on their credits taken.
     Their data is being written to this file, only concern yourself with the amount of credits taken.
