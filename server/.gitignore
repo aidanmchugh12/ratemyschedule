@@ -3,3 +3,4 @@ __pycache__
 uploads
 schedule.csv
 .env
+breaks.csv
