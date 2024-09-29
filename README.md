@@ -7,7 +7,7 @@ As college students, we often find ourselves struggling to create the perfect cl
 
 We created Rate My Schedule to deliver a comprehensive report card on the quality of your schedule. Whether you receive an A or an F, Rate My Schedule will calm your nerves, giving you the scheduling insights you need to set yourself up for a great semester!
 
-# **Contributers**
+# **Contributors**
 
 The idea and the project was developed by Aidan McHugh, Vaishu Kusumba, Lena Carson, and James Toscano.
 
