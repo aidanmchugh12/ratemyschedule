@@ -223,7 +223,7 @@ def breaksRating(breakScore):
         example: Benedum Hall to Cathedral of Learning is a 9 minute walk and Lena has 10 minutes between the classes in those two buildings so it would rate it a 1
     
     
-    I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on the length of their break and time it takes to walk between classes.
+    I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on the length of their breaks and time it takes to walk between classes.
     Their data is being written to this file, only concern yourself with the data concerning this metric (breaks).
 
     """
