@@ -116,7 +116,7 @@ def creditRating(creditScore):
        
        Make sure you justify your math equation of the total credits
         
-    I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on their credits taken.
+    I want you to write out a blurb (Between 150-300 characters) on why they got their specific score based on their credits taken.
     Their data is being written to this file, only concern yourself with the amount of credits taken.
 
     """
@@ -167,7 +167,7 @@ def profRating(profScore):
     example:
     If a student is taking a professor with a high difficulty ranking, they will have a lower score.
     
-    I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on their professor taken.
+    I want you to write out a blurb (Between 150-300 characters) on why they got their specific score based on their professor taken.
     Their data is being written to this file, only concern yourself with the professor data taken.
 
     """
@@ -223,7 +223,7 @@ def breaksRating(breakScore):
         example: Benedum Hall to Cathedral of Learning is a 9 minute walk and Lena has 10 minutes between the classes in those two buildings so it would rate it a 1
     
     
-    I want you to write out a blurb (Between 150-300 characters) on why a student got their specific score based on the length of their breaks and time it takes to walk between classes.
+    I want you to write out a blurb (Between 150-300 characters) on why they got their specific score based on the length of their breaks and time it takes to walk between classes.
     Their data is being written to this file, only concern yourself with the data concerning this metric (breaks).
 
     """
