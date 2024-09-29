@@ -116,6 +116,7 @@ def creditRating(creditScore):
     # store the program overview in a message variable
     message = """Overview:
     The program is a schedule grader that evaluates a user's course schedule based on certain criteria:
+    The Credit Score being passed is the AMOUNT of credits being taken.
      The credit_grading.py file give a rating based on the amount of credits you are taking from 12-18
         rating breakdown:
         total_credits >= 18 is given a 1
@@ -151,7 +152,7 @@ def creditRating(creditScore):
     full_message = f"{message}\n\nCSV Data:\n{csv_data}"
     
     # write the final grade to the message
-    final_grade_message = f"The student's ranking for Professors taken is: {creditScore}. Use the professor data below to explain this ranking.\n"
+    final_grade_message = f"The student's rating for credits taken is: {creditScore}. Use the professor data below to explain this ranking.\n"
     full_message += final_grade_message
 
     # append all the content to the .txt file
