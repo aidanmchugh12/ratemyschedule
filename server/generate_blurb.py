@@ -116,7 +116,7 @@ def creditRating(creditScore):
     # store the program overview in a message variable
     message = """Overview:
     The program is a schedule grader that evaluates a user's course schedule based on certain criteria:
-    The Credit Score being passed is the AMOUNT of credits being taken.
+    The Credit Score being passed is the RATING of the credits, not the AMOUNT of credits being taken.
      The credit_grading.py file give a rating based on the amount of credits you are taking from 12-18
         rating breakdown:
         total_credits >= 18 is given a 1
