@@ -23,5 +23,25 @@ def getProfGrades(profs):
             print(profGradeSum)
 
     return round(profGradeSum / len(profs), 1)
+
+
+# def prof_rating():
+#     # read the dataframe but only get the professors column
+#     df = pd.read_csv('schedule.csv', usecols=['professor'])
+    
+#     # make a new column for averaged professor rating
+#     df['average_rating'] = None
+    
+#     # loop through the professors and assign their average rating in the column
+#     for index, professor in enumerate(df['professor']):
+#         # check if professor has a value and is not nan
+#         if pd.notna(professor):
+#             df.at[index, 'average_rating'] = getProfGrade(professor)
+#         else:
+#             # if professor is NaN, assign None
+#             df.at[index, 'average_rating'] = None 
+        
+#     return df
+
     
 #print(getProfGrades(["jarret", "ramirez", "bonidie"]))
