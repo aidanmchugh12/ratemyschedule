@@ -14,10 +14,12 @@ class InputData extends React.Component {
       creditsTaken: 0,
       creditsTakenBlurb: "",
       loading: true,
+      hasFetched: false,
     };
   }
 
   getDataFromBackend = async () => {
+    if (this.state.hasFetched) return;
     try {
         const response = await fetch('http://127.0.0.1:5000/api/output');
   
@@ -36,6 +38,7 @@ class InputData extends React.Component {
             creditsTaken: data['creditsTaken'],
             creditsTakenBlurb: data['creditsTakenBlurb'],
             loading: false,
+            hasFetched: true,
         })
 
       } catch (err) {

@@ -92,11 +92,12 @@ def createBlurb(finalGrade):
     with open(txt_file_path, 'a') as txt_file:  # open in append mode
         txt_file.write(full_message)
 
-    print(full_message)
+    #print(full_message)
     # configure the api
     genai.configure(api_key='AIzaSyA7zDuJi_5LlvqSsTCzqv-Sj3-Jl1gyixM')
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     # send gemini the txt
-    response = model.generate_content(full_message)  
-    print(response.text)
+    response = model.generate_content(full_message)
+    
+    return response.text
