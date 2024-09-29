@@ -4,10 +4,11 @@ import os
 import pandas as pd
 import numpy as np
 
-# Other python functions
+# CSV parser & grading functions
 from csv_parse import make_csv
 from rmp_grading import get_final_grade
 from credit_grading import sum_credits
+from breaks_grading import class_breaks
 
 app = Flask(__name__)
 CORS(app)
@@ -115,13 +116,13 @@ def get_grading_results():
         "creditsTakenBlurb": "",
     }
     
-    #data['classBreaks'] = FUNCTION
+    data['classBreaks'] = class_breaks(csv_file)
     #data['classBreaksBlurb'] = something
     
-    #data['profRating'] = get_final_grade(csv_file) 
+    data['profRating'] = get_final_grade(csv_file) 
     #data['profRatingBlurb'] = something
     
-    #data['creditsTaken'] = sum_credits(csv_file)
+    data['creditsTaken'] = sum_credits(csv_file)
     #data['creditsTakenBlurb'] = something
     
     #data['overallGrade'] = get_overall_grade(classBreaks, profRating, creditsTaken)
