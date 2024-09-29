@@ -25,7 +25,7 @@ After uploading your schedule to Rate My Schedule, for each class you’ll need 
 
 3. Receive your report!
 
-Like magic, you’ll receive a report card breaking down 3 crucial aspects of your schedule. First, your break times. Rate My Schedule calculates how long your breaks are between classes and compares that information with the time it takes to walk between them. Next, the quality of your professors. Using data from RateMyProfessor, Rate My Schedule assesses other students’ reviews of the professors you’ve chosen. Finally, the amount of credits you’re taking--will you be swamping yourself in work? Don’t worry, Rate My Schedule will let you know!
+Like magic, you’ll receive a report card breaking down 3 crucial aspects of your schedule. First, your break times. Rate My Schedule calculates how long your breaks are between classes and compares that information with the time it takes to walk between them. Next, the quality of your professors. Using data from RateMyProfessor, Rate My Schedule assesses other students’ reviews of the professors you’ve chosen. Finally, the amount of credits you’re taking--will you be swamped in work? Don’t worry, Rate My Schedule will let you know!
 
 ##**How to Install**
 
