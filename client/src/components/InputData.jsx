@@ -14,7 +14,6 @@ class InputData extends React.Component {
   getDataFromBackend = async () => {
     const response = await fetch('http://127.0.0.1:5000/api/test');
     const data = await response.json();
-    console.log('Data from backend:', data);
     this.setClassNames(data);
   };
 
