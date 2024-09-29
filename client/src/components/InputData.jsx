@@ -21,14 +21,6 @@ class InputData extends React.Component {
     const data = [this.classNames, this.classProfs, this.classCredits]
   }
 
-  testData = [
-    ["T 001", "loc1", "name1", "day", "start", "end", "", ""],
-    ["T 002", "loc1", "name1", "day", "start", "end", "", ""],
-    ["T 003", "loc1", "name1", "day", "start", "end", "", ""],
-    ["T 004", "loc1", "name1", "day", "start", "end", "", ""],
-    ["T 005", "loc1", "name1", "day", "start", "end", "", ""],
-  ];
-
   handleProfessorChange = (index, event) => {
     const newProfs = [...this.state.classProfs];
     newProfs[index] = event.target.value;
