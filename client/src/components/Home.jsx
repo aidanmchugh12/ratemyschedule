@@ -27,6 +27,7 @@ export default function Home() {
     <>
       <h1>RateMySchedule!</h1>
       <p>Attatch .ics file below to analyze your schedule!</p>
+      <img src="ICS_TO_CSV.png"></img>
       <input
         type="file"
         onChange={(event) => setFile(event.target.files[0])}

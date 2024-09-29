@@ -7,7 +7,6 @@ def sum_credits(csvFile):
     # get the sum and skip the Nan values
     total_credits = df['credits'].sum(skipna = True)
     
-    print(total_credits)
     # match case to determine credit rating
     match total_credits:
         case _ if total_credits > 18:
