@@ -6,8 +6,8 @@ class InputData extends React.Component {
 
     this.state = {
       classNames: [],
-      classProfs: [],
-      classCredits: [1, 1, 1, 1, 1],
+      classProfs: Array(5).fill(''),
+      classCredits: Array(5).fill(1),
     };
   }
 
@@ -15,7 +15,11 @@ class InputData extends React.Component {
     const response = await fetch('http://127.0.0.1:5000/api/test');
     const data = await response.json();
     this.setClassNames(data);
-  };
+  }
+
+  postDataToBackend = async () => {
+    const data = [this.classNames, this.classProfs, this.classCredits]
+  }
 
   testData = [
     ["T 001", "loc1", "name1", "day", "start", "end", "", ""],
@@ -24,6 +28,23 @@ class InputData extends React.Component {
     ["T 004", "loc1", "name1", "day", "start", "end", "", ""],
     ["T 005", "loc1", "name1", "day", "start", "end", "", ""],
   ];
+
+  handleProfessorChange = (index, event) => {
+    const newProfs = [...this.state.classProfs];
+    newProfs[index] = event.target.value;
+    this.setState({ classProfs: newProfs });
+  }
+
+  handleCreditChange = (index, event) => {
+    const newCredits = [...this.state.classCredits];
+    newCredits[index] = Number(event.target.value);
+    this.setState({ classCredits: newCredits });
+  }
+
+  handleSubmit = () => {
+    console.log('Professors:', this.state.classProfs);
+    console.log('Credits:', this.state.classCredits);
+  }
 
   setClassNames = (array2D) => {
     const newNames = [];
@@ -42,7 +63,8 @@ class InputData extends React.Component {
     return (
       <>
         <head>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous"></link>
+          
         </head>
 
         <h1>Almost there!</h1>
@@ -59,6 +81,8 @@ class InputData extends React.Component {
                 placeholder="Professor"
                 aria-label="Professor"
                 aria-describedby="addon-wrapping"
+                value={this.state.classProfs[index]}
+                onChange={(event) => this.handleProfessorChange(index, event)}
               />
               <select className="form-select" aria-label="Select credits">
                 <option value="1">1 Credit</option>
@@ -68,7 +92,7 @@ class InputData extends React.Component {
               </select>
             </div>
           ))}
-          <button type="button" class="btn btn-outline-primary">Submit & Grade Schedule</button>
+          <button type="button" class="btn btn-outline-primary" onClick={this.handleSubmit}>Submit & Grade Schedule</button>
         </div>
       </>
     );

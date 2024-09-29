@@ -50,6 +50,11 @@ def csv_to_array():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
+    
+@app.route('/api/test', methods=['POST'])
+def array_to_csv():
+    # add 
+    return
 
 
 if __name__ == '__main__':
