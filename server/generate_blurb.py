@@ -64,8 +64,8 @@ def createBlurb(finalGrade):
     It will output a grade (A,B,C,D,F) based on the grading (out of 5) of all the criteria above. Each of the criteria is given the same weightage so as to ensure there is no human bias towards which criteria "affects" a schedule the most.
 
 
-    I want you to write out a blurb (Between 100-150 characters) on why a student got a specific grade based on their criteria using data from the CSV to explain it to them.
-
+    I want you to write out a blurb (Second-Person Perspective)(Between 100-150 characters) on why a student got a specific grade based on their criteria using data from the CSV to explain it to them.
+    DO NOT MENTION THE TOTAL AMOUNT OF CREDITS TAKEN
     """
 
     # read csv into dataframe
@@ -116,7 +116,7 @@ def creditRating(creditScore):
        
        Make sure you justify your math equation of the total credits
         
-    I want you to write out a blurb (Between 150-300 characters) on why they got their specific score based on their credits taken.
+    I want you to write out a blurb (Second-Person Perspective)(Between 150-300 characters) on why they got their specific score based on their credits taken.
     Their data is being written to this file, only concern yourself with the amount of credits taken.
 
     """
@@ -167,7 +167,7 @@ def profRating(profScore):
     example:
     If a student is taking a professor with a high difficulty ranking, they will have a lower score.
     
-    I want you to write out a blurb (Between 150-300 characters) on why they got their specific score based on their professor taken.
+    I want you to write out a blurb (Second-Person Perspective) (Between 150-300 characters) on why they got their specific score based on their professor taken.
     Their data is being written to this file, only concern yourself with the professor data taken.
 
     """
@@ -223,7 +223,7 @@ def breaksRating(breakScore):
         example: Benedum Hall to Cathedral of Learning is a 9 minute walk and Lena has 10 minutes between the classes in those two buildings so it would rate it a 1
     
     
-    I want you to write out a blurb (Between 150-300 characters) on why they got their specific score based on the length of their breaks and time it takes to walk between classes.
+    I want you to write out a blurb (Second-Person Perspective)(Between 150-300 characters) on why they got their specific score based on the length of their breaks and time it takes to walk between classes.
     Their data is being written to this file, only concern yourself with the data concerning this metric (breaks).
 
     """
