@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
+import pandas as pd
+import numpy as np
 
 from csv_parse import make_csv
 
@@ -33,8 +35,18 @@ def upload_file():
 
 @app.route('/api/test', methods=['GET'])
 def csv_to_array():
-    # implement code here
-    return #2d array
+    # put csv file values in 2d array
+    df = pd.read_csv('schedule.csv')
+
+    # only need unique class values
+    df_unique = df.drop_duplicates(subset=['class_id'])
+
+    # convert back to a numpy array if needed
+    unique_array = df_unique.to_numpy()
+
+    # return unique array
+    return unique_array
+
 
 if __name__ == '__main__':
     app.run(debug=True)
