@@ -1,5 +1,6 @@
 # Rate My Schedule (Pitt)
 **A Steel Hacks 2024 project.**
+**Winner: Best Pitt Inspired Demo powered by Gemini API**
 
 # **Description**
 
