@@ -36,6 +36,7 @@ Like magic, you’ll receive a report card breaking down 3 crucial aspects of yo
 
 # **Lanuages/Frameworks/Dev Tools**
 
+- React
 - Flask
 - Python
 - Auth0
