@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from rms_dev.server.metrics.walking_distance import getWalkTime
+from walking_distance import getWalkTime
 
 def class_breaks(schedule): #arg: schedule.csv file
     

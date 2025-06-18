@@ -1,0 +1,34 @@
+{
+  "reportName": "",
+  "reportDateTime": "",
+  "scheduleData": {},
+  "reportData": {
+    "scores": {
+      "overallScore": "",
+      "timeMetricsScore": "",
+      "academicRigorScore": "",
+      "instructorEvalScore": "",
+      "scoreSummary": ""
+    },
+    "timeMetrics": {
+      "walkingDistances": {
+        "monday": {},
+        "tuesday": {},
+        "wednesday": {},
+        "thursday": {},
+        "friday": {}
+      },
+      "summary": ""
+    },
+    "academicRigor": {
+      "creditLoad": "",
+      "summary": ""
+    },
+    "instructorEval": {
+      "instructorNames": [],
+      "instructorLinks": [],
+      "summary": ""
+    },
+    "statistics": {}
+  }
+}

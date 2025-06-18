@@ -1,4 +1,5 @@
 # Rate My Schedule (Pitt)
+
 **A Steel Hacks 2024 project.**
 **Winner: Best Pitt Inspired Demo powered by Gemini API**
 
@@ -14,7 +15,7 @@ The idea and the project was developed by Aidan McHugh, Vaishu Kusumba, Lena Car
 
 # **How to Use**
 
-1. Be a Pitt student! 
+1. Be a Pitt student!
 
 Rate My Schedule is designed specifically for Pitt students--to get started, all you have to do is download your schedule from Peoplesoft. Just navigate to your schedule and use the Download button in the top right. The file type should be .ics.
 
@@ -22,7 +23,7 @@ Rate My Schedule is designed specifically for Pitt students--to get started, all
 
 2. Upload your schedule
 
-After uploading your schedule to Rate My Schedule, for each class you’ll need to enter the professor’s name and the amount of credits it’s worth. 
+After uploading your schedule to Rate My Schedule, for each class you’ll need to enter the professor’s name and the amount of credits it’s worth.
 
 ![](images/home.png)
 ![](images/input.png)
@@ -35,21 +36,17 @@ Like magic, you’ll receive a report card breaking down 3 crucial aspects of yo
 
 # **Lanuages/Frameworks/Dev Tools**
 
-+ Flask
-+ Python
-+ Javascript
-+ Bootstrap
-+ Github
-+ HTML
-+ CSS
+- Flask
+- Python
+- Auth0
+- MongoDB
+- Javascript
+- Bootstrap
+- HTML
+- CSS
 
 # **APIs**
-+ Gemini
-+ RateMyProfessor
-+ HERE Routing
 
-
-
-
-
-
+- Gemini
+- RateMyProfessor
+- HERE Routing

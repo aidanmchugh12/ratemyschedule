@@ -1,0 +1,6 @@
+__pycache__
+/.venv
+uploads
+schedule.csv
+.env
+breaks.csv

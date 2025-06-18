@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.generate-report {
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.report-icon {
+  margin: 30px;
+  width: 250px;
+  height: auto;
+}
+
+.input-file {
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.upload-button {
+  width: 100px;
+  height: 25px;
+}
+
+.saved-reports {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}

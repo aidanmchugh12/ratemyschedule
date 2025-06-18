@@ -1,0 +1,198 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 250%;
+}
+h2 {
+  text-align: center;
+  font-size: 175%;
+}
+h3 {
+  text-align: center;
+  font-style: italic;
+}
+
+.report-page {
+  padding: 0.5vw;
+}
+
+.score-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  width: 80vw;
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  background: #fafafa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.overall {
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  width: 22vw;
+  min-width: 180px;
+  max-width: 250px;
+  margin: 2vw 0;
+  text-align: center;
+  padding: 2vw 1vw;
+  background: #fff;
+}
+
+.title {
+  font-size: 150%;
+}
+
+.score {
+  font-family: monospace, monospace;
+  padding: 1vw;
+  font-size: 600%;
+}
+
+.individual {
+  margin: 2vw 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  padding: 2vw 1vw;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1vw;
+  min-width: 40vw;
+  max-width: 500px;
+  width: 50vw;
+}
+
+.sub-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  margin: 0;
+  padding: 0.5vw 0;
+}
+
+.sub-title {
+  margin: 0;
+  font-size: 150%;
+}
+
+.individual-score {
+  font-family: monospace, monospace;
+  text-align: center;
+  min-width: 40px;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 700px) {
+  .score-card {
+    flex-direction: column;
+    gap: 20px;
+    width: 98vw;
+    max-width: 100vw;
+    min-width: unset;
+    margin: 0 auto;
+  }
+  .overall,
+  .individual {
+    width: 90vw;
+    min-width: unset;
+    max-width: 100vw;
+    padding: 20px 10px;
+  }
+  .title,
+  .sub-title {
+    font-size: 20px;
+  }
+  .score,
+  .individual-score {
+    font-size: 40px;
+  }
+}
+
+.instructor-report {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+  gap: 2vw;
+}
+
+.instructor-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  width: 80vw;
+  display: flex;
+  gap: 1vw;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw;
+  background: #fafafa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+  font-size: 150%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.instructor-segments {
+  display: flex;
+  flex-direction: column;
+}
+
+.instructor-segment {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.3vw 0;
+}
+
+.class-name {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dot-leader {
+  flex: 2 1 auto;
+  border-bottom: 2px dotted black;
+  height: 1em;
+  margin: 0 5px;
+}
+
+.instructor-link {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.instructor-summary {
+  font-size: 150%;
+  text-indent: 50px;
+}
+
+.breaks-report {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.credits-report {
+  margin-left: 100px;
+  margin-right: 100px;
+}
